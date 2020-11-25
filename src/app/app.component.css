@@ -31,5 +31,22 @@ table, th, td {
 }
 
 .customstyle1 {
-    background-color:darkgray
+    background-color: darkgray
+}
+
+.tableClass {
+    width: 100%;
+    background-color: darkgrey;
+}
+
+.flexDisplay {
+    display: flex;
+}
+
+.floatRight {
+    float: right;
+}
+
+.heightImage {
+    width: 0.5em;
 }

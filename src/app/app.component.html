@@ -1,11 +1,14 @@
 <div class="container">
 
-  <table style="width: 100%;background-color: darkgrey;">
+  <table class="tableClass">
     <tr class="customstyle1">
       <th>
-        <input type="text"  placeholder="search box" (change)="find($event)" />
+        <div class="flexDisplay">
+          <input type="text" [(ngModel)] = "search" placeholder="search box" />
+          <button (click)="find()">search</button>
+        </div>
       </th>
-      <th style="float: right;">
+      <th class="floatRight">
         <button (click)="prev()">
           prev
         </button>
@@ -16,7 +19,7 @@
       </th>
     </tr>
     <tr class="tableData" *ngFor="let item of loadItems, let i= index">
-      <td style="width: 0.5em;">
+      <td class="heightImage">
         <img class="setImage" [src]="item.image" />
       </td>
       <td>

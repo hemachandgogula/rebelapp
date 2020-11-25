@@ -9,6 +9,7 @@ import { HttpService } from './http.service';
 export class AppComponent {
   title = 'rebelapp';
   items: any;
+  search: any;
   Imageitems: any;
   start: number;
   last: number;
@@ -16,6 +17,7 @@ export class AppComponent {
   loadItems: any;
   constructor(private http: HttpService) {
     this.start = 0;
+    this.search = '';
     this.last = 20;
     // service call to get the beer details
     this.http.getBeerDetailsCall().subscribe((resp) => {
@@ -48,6 +50,7 @@ export class AppComponent {
     const fst = this.start - 20;
     this.start = (fst) >= 0 ? fst : 0;
     this.last = (lst) >= 20 ? lst : this.start < lst ? lst : this.last;
+    this.search = '';
     this.load();
   }
 
@@ -60,15 +63,16 @@ export class AppComponent {
     const fst = this.start + 20;
     this.start = fst < this.total ? fst : this.start;
     this.last = lst <= this.total ? lst : this.last;
+    this.search = '';
     this.load();
   }
 
-  find(keyword): void {
-    keyword = keyword.target.value;
+  find(): void {
+    const keyword = this.search;
     // search a beer from the list
     let foundIndex = -1;
     for (let i = 0; i < this.total; i++) {
-      if ((this.items[i].name).indexOf(keyword) !== -1) {
+      if ((this.items[i].name).toLowerCase().indexOf(keyword.toLowerCase()) !== -1) {
         foundIndex = i;
         break;
       }
