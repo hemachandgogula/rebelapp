@@ -1,0 +1,37 @@
+<div class="container">
+
+  <table style="width: 100%;background-color: darkgrey;">
+    <tr class="customstyle1">
+      <th>
+        <input type="text"  placeholder="search box" (change)="find($event)" />
+      </th>
+      <th style="float: right;">
+        <button (click)="prev()">
+          prev
+        </button>
+        |{{start+1}} - {{last}} of {{total}}|
+        <button (click)="next()">
+          next
+        </button>
+      </th>
+    </tr>
+    <tr class="tableData" *ngFor="let item of loadItems, let i= index">
+      <td style="width: 0.5em;">
+        <img class="setImage" [src]="item.image" />
+      </td>
+      <td>
+        <span class="name">
+          Beer Name: {{item.name}}
+        </span>
+        <br>
+        <span class="style">
+          Beer Style: {{item.style}}
+        </span>
+        <br>
+        <span class="ounces">
+          Available: {{item.ounces}} Ounces
+        </span>
+      </td>
+    </tr>
+  </table>
+</div>

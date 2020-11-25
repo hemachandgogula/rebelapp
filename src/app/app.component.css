@@ -1,0 +1,35 @@
+.container {
+    margin: 0% 20%;
+    text-align: center;
+    border-style: solid;
+    width: 60%;
+    background-color: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 0px;
+}
+
+.tableData {
+    text-align: left;
+    background-color: darkgray;
+}
+
+.setImage {
+    width: 3em;
+    height: 3em;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.style .ounces {
+    font-size: 12px;
+}
+
+.customstyle1 {
+    background-color:darkgray
+}
