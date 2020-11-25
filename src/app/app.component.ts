@@ -8,11 +8,11 @@ import { HttpService } from './http.service';
 })
 export class AppComponent {
   title = 'rebelapp';
-  private items: any;
-  private Imageitems: any;
-  private start: number;
-  private last: number;
-  private total: number;
+  items: any;
+  Imageitems: any;
+  start: number;
+  last: number;
+  total: number;
   loadItems: any;
   constructor(private http: HttpService) {
     this.start = 0;
